@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Página - INFOMAP</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Fuente Rajdhani -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-dark text-white">
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Contenido Principal -->
+    <main class="pt-24 min-h-screen">
+        <div class="container mx-auto px-4 py-20">
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 text-center">
+                Nueva Página
+            </h1>
+            <p class="text-xl text-gray-light text-center mb-12">
+                Esta es una página de ejemplo que usa los componentes reutilizables header y footer.
+            </p>
+            
+            <!-- Tu contenido específico aquí -->
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-dark p-8 rounded-lg">
+                        <h2 class="text-2xl font-bold mb-4">Sección 1</h2>
+                        <p class="text-gray-light">
+                            Contenido de la primera sección...
+                        </p>
+                    </div>
+                    <div class="bg-gray-dark p-8 rounded-lg">
+                        <h2 class="text-2xl font-bold mb-4">Sección 2</h2>
+                        <p class="text-gray-light">
+                            Contenido de la segunda sección...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript para cargar componentes -->
+    <script src="js/components.js"></script>
+</body>
+</html> 

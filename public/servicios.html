@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - INFOMAP</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Fuente Rajdhani -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(59, 167, 227, 0.4);
+            border-color: #3BA7E3;
+            height: auto;
+            min-height: 400px;
+        }
+        
+        .service-content {
+            transition: all 0.4s ease;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .service-card:hover .service-content {
+            opacity: 1;
+            max-height: 500px;
+        }
+        
+        .service-image {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            background-color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 0 auto 20px auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.1);
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #3BA7E3;
+        }
+
+        .service-brief {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .icon-check {
+            color: #3BA7E3;
+        }
+        
+        .instrument-badge {
+            background: linear-gradient(135deg, #3BA7E3, #2563eb);
+            transition: transform 0.2s ease;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        .instrument-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .hover-indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #3BA7E3;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover .hover-indicator {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="font-sans bg-dark text-white">
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center pt-20 bg-gradient-to-br from-gray-900 to-dark">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Nuestros <span class="text-secondary">Servicios</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-light mb-8">
+                    Somos profesionales con licencia SEC y nuestros equipos se encuentran calibrados por laboratorios acreditado por el instituto nacional de normalización (INN). 
+                </p>
+                <p class="text-lg text-gray-light mb-4">
+                    Somos especialistas en buscar soluciones a la medida de nuestros clientes.
+                </p>
+                <p class="text-sm text-secondary font-semibold">
+                    👆 Haz click en cualquier servicio para ver los detalles
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Interactivos -->
+    <section class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Servicios Especializados</h2>
+            
+            <div class="max-w-7xl mx-auto">
+                <!-- Grid de Tarjetas de Servicios -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Tarjeta 1: Verificación Inicial -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/417_N_Kesp_FIL_AC_UF_1000_1000_QL_80_484131332a.jpg" alt="Verificación Inicial" class="service-image" />
+                        <h3 class="service-title">Informe de verificación Inicial</h3>
+                        <p class="service-brief">Ensayos completos según normativas SEC</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Continuidad de conductores</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Resistencia de aislamiento</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Impedancia de bucle de falla</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de diferenciales (RCD)</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Medición de iluminación</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">Metrel 3155</span>
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">Megger mft-x</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 2: Mallas Tierras -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/telurimetro_digital_megabrass_MTD_20_K_We_removebg_preview_bc5ef0bca7.png" alt="Mallas Tierras" class="service-image" />
+                        <h3 class="service-title">Medición y diseño de mallas tierras</h3>
+                        <p class="service-brief">Estudios de resistividad y diseño de mallas</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Resistencia de mallas tierra</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Resistividad método Schlumberger</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Resistividad método Wenner</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Diseño de mallas tierras</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">AEMC 6471</span>
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">Megabras mtd</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 3: Análisis Redes -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/AEMC_8333_with_3_193_24_BK_removebg_preview_faf0f66e8d.png" alt="Análisis Redes" class="service-image" />
+                        <h3 class="service-title">Análisis de redes eléctricas</h3>
+                        <p class="service-brief">Hasta 2000A con medición de armónicos</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Variables KW, KVAr y KVA</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Factor de potencia</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Distorsión armónica</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Flicker eléctrico</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">AEMC 3945-B</span>
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">SONEL PQM700</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 4: Termografía -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/Hikmicro_G60_5940165031.jpg" alt="Termografía" class="service-image" />
+                        <h3 class="service-title">Inspección termográfica</h3>
+                        <p class="service-brief">Industrial con múltiples lentes especializados</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Equipamiento eléctrico</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Tableros eléctricos</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Subestaciones</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Parques solares</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">HIKMICRO G60</span>
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">GTC 400C</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 5: Pruebas Eléctricas -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/1670945681_F_805_03a_s_bc07e02eb0.jpg" alt="Pruebas Eléctricas" class="service-image" />
+                        <h3 class="service-title">Pruebas eléctricas generales</h3>
+                        <p class="service-brief">Aislación hasta 5KV y vibración industrial</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Aislación 2,5-5 KV (DAR-PI)</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Vibración industrial</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Niveles de iluminación</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Armónicos monofásicos</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">UT513A 5KV</span>
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">FLUKE 805 FC</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 6: Electromovilidad -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/0382075001547025955_removebg_preview_ce00531053.png" alt="Electromovilidad" class="service-image" />
+                        <h3 class="service-title">Pruebas de electromovilidad</h3>
+                        <p class="service-brief">Estaciones de carga y funcionalidad</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de impedancia de línea estaciones de carga</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de impedancia del circuito de falla</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de diferenciales</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de aislamiento para estaciones de carga</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Pruebas de funcionalidad</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">A 1532 XA EVSE</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 7: Interruptores de Poder -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/merlin_gerin_hire_removebg_preview_5e10fe7f42.png" alt="Interruptores" class="service-image" />
+                        <h3 class="service-title">Prueba de interruptores de poder</h3>
+                        <p class="service-brief">Configuración y pruebas automáticas</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Mostrar la configuración de interruptores</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Pruebas de funcionamiento en el componente electrónico</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Pruebas automáticas (verificación de la curva de viaje)</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Pruebas en la función Zone-Selective Interlocking (ZSI)</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Pruebas hasta puerto STR53UE</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Pruebas Micrologic 2.0, 3.0, 5.0, 2.0A, 3.0A, 5.0A, 7.0A, 5.0P, 5.0H, 7.0P, 7.0H, 6.0A, 6.0P, 6.0H</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">Maleta Schneider S33595</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 8: Mallas AT y PMGD -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/original_metrel_mi3295_0c7775acff.jpg" alt="Mallas AT" class="service-image" />
+                        <h3 class="service-title">Mallas Tierra Alta Tensión y PMGD</h3>
+                        <p class="service-brief">Medición alta frecuencia e impedancia de impulso</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Medición Malla Tierra Alta Frecuencia (25kH)</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de Impedancia de Impulso (10/350)</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Medición malla tierra en barrido de alta frecuencia</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de cable de tierra pilón (PGWT)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">Metrel 3290 GX</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 9: Supresores de Transientes -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/1552586198908_47a1f6d233.png" alt="Supresores" class="service-image" />
+                        <h3 class="service-title">Suministro y Montaje Supresores de Transientes</h3>
+                        <p class="service-brief">Trifásicos, monofásicos y control 24 VDC</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Suministro y Montaje de Supresores de Transientes Trifásicos</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Suministro y Montaje de Supresores de Transientes Trifásicos con contador</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Suministro y Montaje de Supresores de Transientes monofásicos</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Suministro y Montaje de Supresores de Transientes para control 24 VDC</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 10: Tensión de Paso y Contacto -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/2135_61_01_0522_ea5dade426.jpg" alt="Tensión Paso" class="service-image" />
+                        <h3 class="service-title">Prueba de Tensión de Paso y Contacto</h3>
+                        <p class="service-brief">Medición y estudio de resistividad alta corriente</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Medición de Tensión de Paso</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Medición de Tensión de Contacto</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Estudio de resistividad de suelo alta corriente</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">Metrel 3295</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 11: Plantas Fotovoltaicas -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/MI_31081_5c0492f169.jpg" alt="Plantas Fotovoltaicas" class="service-image" />
+                        <h3 class="service-title">Inspección de Calidad Para Plantas Fotovoltaicas</h3>
+                        <p class="service-brief">Pruebas I-V e inspección de paneles solares</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Pruebas de estado de paneles solares, curva I-V</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Inspección de paneles solares dañados</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Verificación de rendimiento de generación por String</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Inspección visual de riesgos eléctricos general</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> ITO Eléctrico normas SEC</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> ITO Eléctrico normas IEC</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">MI 3108 EurotestPV</span>
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">HT I-V500w</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 12: Cámara Acústica Industrial -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/hikmicro_sound_source_localization_camera_or_acous_7df87adcf0.png" alt="Cámara Acústica" class="service-image" />
+                        <h3 class="service-title">Inspección por Cámara Acústica Industrial</h3>
+                        <p class="service-brief">Detección de descargas parciales y filtraciones</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Detección temprana de descarga parciales por efecto corona</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Mantenimiento preventivo de filtraciones de gas</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Mantenimiento preventivo de filtraciones de aire comprimido</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Localización de filtraciones para eficiencia energética de edificios</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Identificación de vibraciones no deseadas</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Evaluación de la eficiencia de aislamiento acústico</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">AI56 Acoustic Hikmicro</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 13: Integridad de Mallas Tierra -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/c967cabbdddaa51e6bf0aacc859a3200_medium_81f88e3e47.jpg" alt="Integridad Mallas" class="service-image" />
+                        <h3 class="service-title">Pruebas de Integridad de Mallas Tierra</h3>
+                        <p class="service-brief">IEEE81 y medición de impedancia alta corriente</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba impedancia de bucle y línea alta corriente</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba integridad mallas tierra IEEE81 10.2-10.3</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Medición de Impedancia de fuente DC-260V</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Medición de corrientes de fuga altas corrientes</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> ELR prueba de inyección de corriente IEC 60947-2</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> ELR prueba de tiempo combinada</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">MI 3144 Euro Z 800V</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                    <!-- Tarjeta 14: Tableros IEC 61439 -->
+                    <div class="service-card bg-gray-dark p-6 rounded-lg">
+                        <img src="img/metrel_mi3144_tuv0px846g0iebaz_9734bff6be.jpg" alt="Tableros IEC" class="service-image" />
+                        <h3 class="service-title">Pruebas de tableros IEC 61439</h3>
+                        <p class="service-brief">Rigidez dieléctrica y pruebas funcionales</p>
+                        
+                        <div class="service-content">
+                            <div class="mb-4">
+                                <h4 class="text-lg font-bold mb-3 text-secondary">Servicios incluidos:</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Pruebas de rigidez dieléctrica 5KV AC</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de aislación 1000V DC</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de continuidad 25 A</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba funcional (potencia P/S/Q, tensión, corriente, cos fi, frecuencia, ThdU, ThdI, PF)</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> Prueba de RCD</li>
+                                    <li class="flex items-center"><span class="icon-check mr-2">✓</span> ITO IEC 61439-1 y 2</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold mb-2 text-secondary">Instrumentos:</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="instrument-badge text-white px-2 py-1 rounded-full text-xs">MI 3325 MultiServicerXD</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hover-indicator">Pasa el mouse para ver detalles</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">¿Necesitas alguno de estos servicios?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Contáctanos para obtener una cotización personalizada. Nuestros profesionales certificados están listos para ayudarte.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contacto" class="px-8 py-4 bg-white text-secondary rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Solicitar Cotización
+                </a>
+                <a href="tel:+56952000241" class="px-8 py-4 border border-white text-white rounded-lg font-semibold hover:bg-white hover:text-secondary transition-colors">
+                    Llamar: +56 9 5200 0241
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript para cargar componentes -->
+    <script src="js/components.js"></script>
+</body>
+</html> 
