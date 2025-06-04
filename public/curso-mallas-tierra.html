@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Consultoría Técnica - INFOMAP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <style>
+      body { font-family: 'Rajdhani', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#181e26] text-white antialiased">
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-10 px-6 md:px-12" style="background-color:#0a0a0a;">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <!-- Imagen -->
+            <div>
+                <img src="img/high_voltage_tower_a7fe921bfc.jpg" alt="Mallas Tierra" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                <!-- ¿Qué aprenderás? -->
+                <div class="mt-8">
+                    <h2 class="text-xl md:text-2xl font-bold mb-2" style="color:rgb(59,167,227);">¿Qué aprenderás?</h2>
+                    <p class="mb-2" style="color:#b6c2d1;">Conocimientos prácticos con enfoque normativo y técnico</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <ul class="text-sm list-disc pl-4 space-y-1" style="color:#d1d5db;">
+                            <li>Métodos Wenner y Schlumberger</li>
+                            <li>Interpretación de resistividad</li>
+                            <li>Normativa IEEE y SEC</li>
+                        </ul>
+                        <ul class="text-sm list-disc pl-4 space-y-1" style="color:#d1d5db;">
+                            <li>Uso de telurímetros Megabras y AEMC</li>
+                            <li>Calibración y medición</li>
+                            <li>Resolución de errores</li>
+                        </ul>
+                        <ul class="text-sm list-disc pl-4 space-y-1 md:col-span-2" style="color:#d1d5db;">
+                            <li>Estructura profesional de informes</li>
+                            <li>Criterios normativos y casos reales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Información -->
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-2" style="color:rgb(59,167,227);">Medición y Diseño de Mallas Tierra</h1>
+                <!-- Contador regresivo como texto -->
+                <div class="mb-4">
+                  <span id="countdown-text" class="block text-lg font-semibold text-white px-2" style="border-top: 2px solid rgb(59,167,227); border-bottom: 2px solid rgb(59,167,227); padding-top: 2px; padding-bottom: 2px;"></span>
+                </div>
+                <p class="mb-4" style="color:#d1d5db;">Con Marco Vidal, Ingeniero SEC con más de 15 años de experiencia en terreno.</p>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Conoce a tu instructor</h3>
+                    <div class="relative w-full rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=800&h=450&facepad=2" alt="Instructor profesional" class="w-full h-auto object-cover" style="aspect-ratio: 16/9;">
+                    </div>
+                </div>
+                <ul class="text-sm space-y-2 mb-6" style="color:#b6c2d1;">
+                    <li>📅 <strong class="text-white">10 al 11 de julio 2025</strong> – 2 días intensivos</li>
+                    <li>💻 Modalidad presencial u online</li>
+                    <li>📘 Material incluido</li>
+                    <li>📜 Certificado SEC incluido</li>
+                </ul>
+                <div class="space-y-4">
+                    <a href="https://infomap.cl/temario-mallas.pdf" target="_blank" class="block w-full text-center py-3 rounded-lg transition font-semibold" style="border: 1.5px solid rgb(59,167,227); color:rgb(59,167,227); background:transparent;" onmouseover="this.style.backgroundColor='rgb(59,167,227)';this.style.color='white'" onmouseout="this.style.backgroundColor='transparent';this.style.color='rgb(59,167,227)'">
+                        Descargar Temario
+                    </a>
+                    <a href="https://infomap.cl/checkout/mallas" target="_blank" class="block w-full text-center py-3 rounded-lg font-bold transition text-white" style="background-color:rgb(59,167,227);" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        Inscribirme – $89.000
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temario visual -->
+    <section class="py-20" style="background-color:rgb(10,10,10);">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Temario General</h2>
+            <ol class="space-y-4 text-lg list-decimal list-inside md:pl-8" style="color:#b6c2d1;">
+                <li>Fundamentos de puesta a tierra y normativa</li>
+                <li>Uso de telurímetros: AEMC y Megabras</li>
+                <li>Aplicación práctica del método Wenner y Schlumberger</li>
+                <li>Interpretación de datos y análisis de riesgo</li>
+                <li>Informe técnico y validación con SEC</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Testimonios Carrusel -->
+    <section class="py-20" style="background-color:rgb(10,10,10);">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12">
+                Testimonios de <span style="color:rgb(59,167,227);">participantes</span>
+            </h2>
+            <div class="testimonios-carousel overflow-hidden relative">
+                <div class="testimonios-track inline-flex" style="animation: scroll 18s linear infinite;">
+                    <figure class="rounded-xl shadow-lg p-8 flex flex-col h-full justify-between mx-4" style="background-color:#23272f; min-width:320px; max-width:350px;">
+                        <blockquote class="mb-4 text-xl" style="color:#b6c2d1;">"Excelente consultoría, clara y con ejemplos reales. El relator domina completamente el tema."</blockquote>
+                        <figcaption class="text-lg font-semibold text-white">Carlos R., Técnico eléctrico</figcaption>
+                    </figure>
+                    <figure class="rounded-xl shadow-lg p-8 flex flex-col h-full justify-between mx-4" style="background-color:#23272f; min-width:320px; max-width:350px;">
+                        <blockquote class="mb-4 text-xl" style="color:#b6c2d1;">"Muy útil para quienes trabajamos en terreno. Me ayudó a entender mejor las mediciones de mallas."</blockquote>
+                        <figcaption class="text-lg font-semibold text-white">María L., Ingeniera en ejecución</figcaption>
+                    </figure>
+                    <!-- Duplicar para efecto infinito -->
+                    <figure class="rounded-xl shadow-lg p-8 flex flex-col h-full justify-between mx-4" style="background-color:#23272f; min-width:320px; max-width:350px;">
+                        <blockquote class="mb-4 text-xl" style="color:#b6c2d1;">"Excelente consultoría, clara y con ejemplos reales. El relator domina completamente el tema."</blockquote>
+                        <figcaption class="text-lg font-semibold text-white">Carlos R., Técnico eléctrico</figcaption>
+                    </figure>
+                    <figure class="rounded-xl shadow-lg p-8 flex flex-col h-full justify-between mx-4" style="background-color:#23272f; min-width:320px; max-width:350px;">
+                        <blockquote class="mb-4 text-xl" style="color:#b6c2d1;">"Muy útil para quienes trabajamos en terreno. Me ayudó a entender mejor las mediciones de mallas."</blockquote>
+                        <figcaption class="text-lg font-semibold text-white">María L., Ingeniera en ejecución</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <style>
+                @keyframes scroll {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .testimonios-carousel:hover .testimonios-track {
+                    animation-play-state: paused;
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes -->
+    <section class="py-20 px-4" style="background-color:#23272f;">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+            <dl class="space-y-8">
+                <div>
+                    <dt class="text-xl font-semibold text-white">¿Necesito experiencia previa?</dt>
+                    <dd class="mt-2" style="color:#b6c2d1;">No es obligatoria, pero se recomienda tener conocimientos básicos en electricidad.</dd>
+                </div>
+                <div>
+                    <dt class="text-xl font-semibold text-white">¿Entregan certificado?</dt>
+                    <dd class="mt-2" style="color:#b6c2d1;">Sí, recibirás un certificado digital de participación.</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t" style="background-color:rgb(10,10,10);border-color:#23272f;">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <img src="img/rayo-azul.png" alt="Infomap Logo" class="w-8 h-8" />
+                    <span class="text-xl font-bold tracking-widest">INFOMAP</span>
+                </div>
+                <div class="text-center md:text-right" style="color:#b6c2d1;">
+                    &copy; 2024 INFOMAP. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contador regresivo como texto bajo el título
+        const countdownText = () => {
+            const deadline = new Date("July 8, 2025 23:59:59").getTime();
+            const now = new Date().getTime();
+            const diff = deadline - now;
+            let text = "";
+            if (diff < 0) {
+                text = "¡Cierre finalizado!";
+            } else {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+                text = `Inscripciones cierran en: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+            document.getElementById("countdown-text").innerText = text;
+        };
+        setInterval(countdownText, 1000);
+        countdownText();
+    </script>
+    <script src="js/components.js"></script>
+</body>
+</html>

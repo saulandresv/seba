@@ -1,25 +1,40 @@
 <!-- Header -->
-<header class="fixed top-0 w-full bg-gray-dark/95 backdrop-blur-sm z-50 border-b border-gray-medium">
-    <div class="container mx-auto px-4">
+<header class="fixed top-0 w-full z-50 border-b" style="background-color: rgb(26,26,26); border-color: #23272f;">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-between h-20">
             <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 flex items-center justify-center">
-                    <img src="img/rayo-azul.png" alt="Infomap Logo" class="w-10 h-10" />
-                </div>
+                <img src="img/rayo-azul.png" alt="Infomap Logo" class="w-10 h-10" />
                 <span class="text-2xl font-bold tracking-widest">INFOMAP</span>
             </div>
             <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-lg hover:text-secondary transition-colors">Inicio</a>
-                <a href="#nosotros" class="text-lg hover:text-secondary transition-colors">Nosotros</a>
-                <a href="servicios.html" class="text-lg hover:text-secondary transition-colors">Servicios</a>
-                <a href="#clientes" class="text-lg hover:text-secondary transition-colors">Clientes</a>
-                <a href="#contacto" class="text-lg hover:text-secondary transition-colors">Contacto</a>
+                <a href="index.html" class="text-lg transition-colors" style="color:#d1d5db;" id="nav-inicio">Inicio</a>
+                <a href="#nosotros" class="text-lg transition-colors" style="color:#d1d5db;" id="nav-nosotros">Nosotros</a>
+                <a href="servicios.html" class="text-lg transition-colors" style="color:#d1d5db;" id="nav-servicios">Servicios</a>
+                <a href="curso-mallas-tierra.html" class="text-lg transition-colors" style="color:#d1d5db;" id="nav-workshop">Workshop</a>
+                <a href="#clientes" class="text-lg transition-colors" style="color:#d1d5db;" id="nav-clientes">Clientes</a>
+                <a href="#contacto" class="text-lg transition-colors" style="color:#d1d5db;" id="nav-contacto">Contacto</a>
             </nav>
-            <button class="md:hidden text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
         </div>
     </div>
-</header> 
+</header>
+
+<script>
+// Resaltar solo el enlace activo según la URL
+(function() {
+  var path = window.location.pathname.split('/').pop();
+  var navs = {
+    'index.html': 'nav-inicio',
+    '': 'nav-inicio', 
+    'servicios.html': 'nav-servicios',
+    'curso-mallas-tierra.html': 'nav-workshop'
+  };
+  var active = navs[path];
+  if (active) {
+    var el = document.getElementById(active);
+    if (el) {
+      el.style.color = 'rgb(59,167,227)';
+      el.classList.add('font-bold');
+    }
+  }
+})();
+</script> 
